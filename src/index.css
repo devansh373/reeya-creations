@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap");
+
+:root {
+  --font-main: "Inter", system-ui, -apple-system, sans-serif;
+  --font-logo: "Playfair Display", serif;
+
+  /* Color Palette */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-tertiary: #f4f4f5;
+  --bg-dark: #0a0a0a;
+  --bg-dark-accent: #111111;
+
+  --text-primary: #0a0a0a;
+  --text-secondary: #52525b;
+  --text-inverse: #ffffff;
+  --text-muted: #a1a1aa;
+
+  --accent: #000000;
+  --accent-foreground: #ffffff;
+
+  --border: #e4e4e7;
+  --border-dark: #27272a;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  --container-width: 1280px;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-tertiary: #18181b;
+  --bg-dark: #000000;
+
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-inverse: #0a0a0a;
+
+  --border: #27272a;
+  --border-dark: #3f3f46;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all 0.2s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Sections */
+section {
+  padding: 6rem 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    to right,
+    var(--text-primary),
+    var(--text-secondary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism helpers */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
