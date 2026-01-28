@@ -1,111 +1,141 @@
 import React from "react";
-import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Linkedin,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
-import logo from "../assets/logo.png";
 import "./Footer.css";
+import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="container footer-grid">
-        <div className="footer-brand">
-          <div className="logo white">
-            <img src={logo} alt="Reeya Creations Logo" className="logo-img" />
+    <footer className="footer-section">
+      <div className="container">
+        <div className="footer-main-card">
+          <div className="footer-grid">
+            {/* Logo and Copyright Column */}
+            <div className="footer-col brand-col">
+              <img src={logo} alt="Reeya Creations" className="footer-logo" />
+              <div className="copyright-text">
+                <p>Copyright © 2024 All Rights Reserved.</p>
+                <p>All rights reserved</p>
+              </div>
+            </div>
+
+            {/* Company Column - Two sub-columns */}
+            <div className="footer-col links-col">
+              <h4 className="footer-heading">Company</h4>
+              <div className="links-sub-grid">
+                <ul className="footer-links">
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="#">About Us</a>
+                  </li>
+                  <li>
+                    <a href="#">Products</a>
+                  </li>
+                  <li>
+                    <a href="#">Certificates</a>
+                  </li>
+                  <li>
+                    <a href="#">Contact Us</a>
+                  </li>
+                  <li>
+                    <a href="#">Site Map</a>
+                  </li>
+                </ul>
+                <ul className="footer-links">
+                  <li>
+                    <a href="#">Our Mission</a>
+                  </li>
+                  <li>
+                    <a href="#">Shop</a>
+                  </li>
+                  <li>
+                    <a href="#">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="#">Blog</a>
+                  </li>
+                  <li>
+                    <a href="#">Affiliate Program</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Catalog Column */}
+            <div className="footer-col links-col">
+              <h4 className="footer-heading">Catalog</h4>
+              <ul className="footer-links">
+                <li>
+                  <a href="#">Corporate Gifting</a>
+                </li>
+                <li>
+                  <a href="#">School Clothes</a>
+                </li>
+                <li>
+                  <a href="#">Corporate Garments</a>
+                </li>
+                <li>
+                  <a href="#">Hospital Clothes</a>
+                </li>
+                <li>
+                  <a href="#">Hotel Clothes</a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Help Column */}
+            <div className="footer-col links-col">
+              <h4 className="footer-heading">Help</h4>
+              <ul className="footer-links">
+                <li>
+                  <a href="#">Help Center</a>
+                </li>
+                <li>
+                  <a href="#">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#">Account</a>
+                </li>
+                <li>
+                  <a href="#">Press Inquiries</a>
+                </li>
+                <li>
+                  <a href="#">Shop Account</a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact Us Column */}
+            <div className="footer-col contact-col">
+              <h4 className="footer-heading">Contact Us</h4>
+              <div className="contact-details">
+                <p>
+                  Office No. 304, Stellar Tower, Sector 62, Noida - 201309, UP,
+                  India
+                </p>
+                <p>
+                  <a href="mailto:info@reeyacreations.com">
+                    info@reeyacreations.com
+                  </a>
+                </p>
+                <p>
+                  <a href="tel:+918178874181">+91 8178874181</a>
+                </p>
+                <p className="live-chat">Live Chat</p>
+              </div>
+            </div>
           </div>
-          <p className="brand-desc">
-            Your Premium Partner in high-quality apparel manufacturing and
-            export. Delivering excellence worldwide.
-          </p>
-          <div className="social-links">
-            <a href="#">
-              <Facebook size={20} />
-            </a>
-            <a href="#">
-              <Instagram size={20} />
-            </a>
-            <a href="#">
-              <Twitter size={20} />
-            </a>
-            <a href="#">
-              <Linkedin size={20} />
-            </a>
-          </div>
-        </div>
 
-        <div className="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Product Collection</a>
-            </li>
-            <li>
-              <a href="#">About Us</a>
-            </li>
-            <li>
-              <a href="#">Manufacturing</a>
-            </li>
-            <li>
-              <a href="#">Contact Us</a>
-            </li>
-          </ul>
-        </div>
+          <div className="footer-bottom-line"></div>
 
-        <div className="footer-links">
-          <h3>Industries</h3>
-          <ul>
-            <li>
-              <a href="#">Corporate</a>
-            </li>
-            <li>
-              <a href="#">Healthcare</a>
-            </li>
-            <li>
-              <a href="#">Education</a>
-            </li>
-            <li>
-              <a href="#">Hospitality</a>
-            </li>
-            <li>
-              <a href="#">Industrial</a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="footer-contact">
-          <h3>Contact Us</h3>
-          <ul className="contact-list">
-            <li>
-              <MapPin size={18} />
-              <span>123 Textile Hub, Industrial Area, Mumbai, India</span>
-            </li>
-            <li>
-              <Phone size={18} />
-              <span>+91 98765 43210</span>
-            </li>
-            <li>
-              <Mail size={18} />
-              <span>info@reeyacreations.com</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="footer-bottom">
-        <div className="container bottom-content">
-          <p>&copy; 2024 Reeya Creations. All rights reserved.</p>
-          <div className="bottom-links">
+          <div className="footer-legal-links">
             <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <span className="separator">|</span>
+            <a href="#">Terms and Conditions</a>
+            <span className="separator">|</span>
+            <a href="#">Refund Policy</a>
+            <span className="separator">|</span>
+            <a href="#">Certificates Of Analysis</a>
           </div>
         </div>
       </div>

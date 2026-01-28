@@ -10,6 +10,8 @@ import Capabilities from "./components/Capabilities";
 import Categories from "./components/Categories";
 import Process from "./components/Process";
 import Contact from "./components/Contact";
+import FAQ from "./components/FAQ";
+import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -42,6 +44,8 @@ function App() {
         <Capabilities />
         <Process />
         <Contact />
+        <FAQ />
+        <CTA />
       </main>
       <Footer />
     </div>

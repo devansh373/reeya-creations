@@ -1,0 +1,135 @@
+.faq-section {
+  padding: 8rem 0;
+  background-color: #ffffff;
+}
+
+.faq-section .section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.faq-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.faq-subtitle {
+  font-size: 1.1rem;
+  color: #52525b;
+  font-weight: 500;
+}
+
+.faq-subtitle a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+}
+
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid #f4f4f5;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 24px;
+}
+
+.faq-item.active {
+  background: #ffffff;
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  background: none;
+  border: none;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #000;
+  text-align: left;
+  cursor: pointer;
+  gap: 2rem;
+}
+
+.faq-item.active .faq-question {
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.faq-icon {
+  color: #a1a1aa;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  color: #000;
+}
+
+.faq-answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.faq-item.active .faq-answer-wrapper {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.faq-answer {
+  padding: 0 1rem 2rem 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3f3f46;
+  font-weight: 400;
+}
+
+.faq-detailed-answer p {
+  margin-bottom: 1.5rem;
+}
+
+.faq-detailed-answer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-detailed-answer li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.faq-detailed-answer li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 2.5rem;
+  }
+
+  .faq-question {
+    font-size: 1.05rem;
+    padding: 1.5rem 0.5rem;
+  }
+}
