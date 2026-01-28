@@ -1,53 +1,64 @@
 .footer-section {
-  padding: 4rem 0 2rem;
-  background-color: white;
+  padding: 0;
+  background-color: #000; /* Contrast for the rounded corners */
+}
+
+.footer-section .container {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
 }
 
 .footer-main-card {
-  background-color: white;
-  border-radius: 80px 80px 0 0;
-  padding: 6rem 4rem 4rem;
-  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.05); /* Soft lift matching the top rounded corners */
+  background-color: #ffffff;
+  border-top-left-radius: 120px;
+  border-top-right-radius: 120px;
+  padding: 8rem 8rem 4rem; /* Increased horizontal padding */
+  width: 100%;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1.5fr;
-  gap: 3rem;
-  margin-bottom: 4rem;
+  grid-template-columns: 1.5fr 2fr 1.2fr 1fr 1.5fr;
+  gap: 4rem;
+  margin-bottom: 6rem;
+  align-items: flex-start;
 }
 
+/* Brand Column */
 .brand-col {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .footer-logo {
-  height: 60px;
-  width: auto;
+  width: 180px;
+  height: auto;
   object-fit: contain;
 }
 
 .copyright-text p {
-  font-size: 0.9rem;
-  color: #71717a;
-  line-height: 1.5;
+  font-size: 0.85rem;
+  color: #000;
+  line-height: 1.6;
+  font-weight: 500;
   margin: 0;
 }
 
+/* Headings */
 .footer-heading {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: #000;
-  margin-bottom: 2rem;
-  text-transform: capitalize;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.5px;
 }
 
+/* Link Columns */
 .links-sub-grid {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .footer-links {
@@ -57,27 +68,30 @@
 }
 
 .footer-links li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .footer-links a {
-  font-size: 0.95rem;
-  color: #3f3f46;
+  font-size: 0.9rem;
+  color: #27272a;
   text-decoration: none;
   transition: color 0.2s ease;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .footer-links a:hover {
   color: #000;
 }
 
+/* Contact Details */
 .contact-details p {
-  font-size: 0.95rem;
-  color: #3f3f46;
+  font-size: 0.85rem;
+  color: #27272a;
   line-height: 1.6;
   margin-bottom: 1rem;
   font-weight: 500;
+  max-width: 250px;
 }
 
 .contact-details a {
@@ -88,63 +102,69 @@
 .live-chat {
   font-weight: 800 !important;
   color: #000 !important;
-  margin-top: 1.5rem;
+  margin-top: 2rem !important;
+  font-size: 1rem !important;
   cursor: pointer;
 }
 
+/* Bottom Divider */
 .footer-bottom-line {
   height: 1px;
-  background-color: #f4f4f5;
+  background-color: #e4e4e7;
   width: 100%;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
+/* Legal Links */
 .footer-legal-links {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 .footer-legal-links a {
-  font-size: 0.9rem;
-  color: #52525b;
+  font-size: 0.95rem;
+  color: #27272a;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.footer-legal-links a:hover {
-  color: #000;
 }
 
 .separator {
   color: #d4d4d8;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 
-@media (max-width: 1200px) {
+/* Responsive */
+@media (max-width: 1280px) {
   .footer-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem 2rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .footer-main-card {
-    padding: 4rem 2rem 2rem;
-    border-radius: 40px 40px 0 0;
+    padding: 6rem 3rem 3rem;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
   }
+}
 
+@media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .brand-col {
     grid-column: span 2;
-    align-items: center;
-    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .links-sub-grid {
+    gap: 2rem;
   }
 }
 
@@ -157,16 +177,11 @@
   .links-col,
   .contact-col {
     grid-column: span 1;
-    text-align: center;
-  }
-
-  .links-sub-grid {
-    justify-content: center;
   }
 
   .footer-legal-links {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .separator {
