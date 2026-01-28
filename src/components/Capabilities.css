@@ -1,0 +1,95 @@
+.capabilities-section {
+  padding: 8rem 0;
+  background: white;
+  overflow: hidden;
+}
+
+.capabilities-section .section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.capabilities-section .section-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #000;
+  margin: 0 auto;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  gap: 5rem;
+  align-items: stretch; /* Match height of content */
+}
+
+.capabilities-image-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 80px;
+  overflow: hidden;
+  margin-left: -60px; /* Pull image to the left edge */
+}
+
+.capabilities-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* Invert the image as requested */
+}
+
+.capabilities-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3.5rem; /* Increased gap to grow the column height */
+  padding: 2rem 0; /* Add some vertical padding to push boundaries */
+}
+
+.capabilities-content .main-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.capability-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.capability-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+  opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .capabilities-image-wrapper {
+    margin-left: 0;
+    height: 400px;
+  }
+
+  .capabilities-section .section-header h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .capabilities-image-wrapper {
+    border-radius: 40px;
+    height: 300px;
+  }
+
+  .capabilities-section .section-header h2 {
+    font-size: 2rem;
+  }
+}

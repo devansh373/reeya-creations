@@ -5,8 +5,11 @@ import About from "./components/About";
 import Features from "./components/Features";
 import Catalogue from "./components/Catalogue";
 import Brands from "./components/Brands";
+import Manufacturing from "./components/Manufacturing";
+import Capabilities from "./components/Capabilities";
 import Categories from "./components/Categories";
 import Process from "./components/Process";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -35,8 +38,10 @@ function App() {
         <Features />
         <Catalogue />
         <Brands />
-        <Categories />
+        <Manufacturing />
+        <Capabilities />
         <Process />
+        <Contact />
       </main>
       <Footer />
     </div>

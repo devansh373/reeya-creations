@@ -1,46 +1,99 @@
 .brands-section {
+  padding: 8rem 0;
   background: white;
-  padding: 4rem 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
 }
 
-.brands-header {
+.brands-section .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
-.brands-header h2 {
-  font-size: 1.5rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+.brands-section .section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #000;
 }
 
-.brands-grid {
+.brands-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.brands-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
   flex-wrap: wrap;
-  gap: 3rem;
-  opacity: 0.5;
-  filter: grayscale(1);
-  transition: all 0.3s;
 }
 
-.brands-grid:hover {
-  opacity: 0.8;
-  filter: grayscale(0.5);
+.brand-card {
+  background: #f4f4f5; /* Light gray background to match cards in design */
+  width: 200px;
+  height: 120px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transition: all 0.3s ease;
 }
 
-.brand-item img {
-  height: 40px;
-  width: auto;
-  max-width: 120px;
+.brand-card:hover {
+  background: #e4e4e7;
+  transform: translateY(-5px);
+}
+
+.brand-img {
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
+  filter: grayscale(1) brightness(0.2); /* Make logos dark/minimal like the target */
+  opacity: 0.8;
+  transition: filter 0.3s ease;
+}
+
+.brand-card:hover .brand-img {
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
+}
+
+/* Brands Footer Styling */
+.brands-footer {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.brands-footer a {
+  font-weight: 800;
+  color: #000;
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .brand-card {
+    width: 160px;
+    height: 100px;
+  }
 }
 
 @media (max-width: 768px) {
-  .brands-grid {
-    justify-content: center;
+  .brands-section .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .brand-card {
+    width: 140px;
+    height: 80px;
+    border-radius: 15px;
+    padding: 1.5rem;
+  }
+
+  .brands-row {
+    gap: 1rem;
   }
 }
