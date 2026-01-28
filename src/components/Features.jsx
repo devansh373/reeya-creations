@@ -1,26 +1,28 @@
 import React from "react";
-import { ShieldCheck, Zap, Heart } from "lucide-react";
 import "./Features.css";
+import feature1 from "../assets/feature-1-Vector.png";
+import feature2 from "../assets/feature-2-Vector.png";
+import feature3 from "../assets/feature-3-Vector.png";
 
 const Features = () => {
   const items = [
     {
-      icon: <ShieldCheck size={32} />,
-      title: "Premium Quality Fabrics",
+      image: feature1,
+      title: "Premium Manufacturing Standards",
       description:
-        "We source the finest materials to ensure durability, comfort, and a professional look for all our garments.",
+        "We provide thoughtfully designed gifting and uniform solutions tailored for corporate, hotel, hospital, and school sectors, ensuring consistency, comfort, and a strong brand presence.",
     },
     {
-      icon: <Zap size={32} />,
-      title: "Fast Turnaround",
+      image: feature2,
+      title: "Excellence in Gifting & Uniforms",
       description:
-        "Our efficient manufacturing processes allow us to deliver high-quality apparel solutions in record time.",
+        "Our products are manufactured using high-quality materials, precise processes, and strict quality checks to ensure durability, superior finish, and reliable performance for bulk and customized orders.",
     },
     {
-      icon: <Heart size={32} />,
-      title: "Customized for You",
+      image: feature3,
+      title: "Customer-Centric Approach",
       description:
-        "Every industry has unique needs. We tailor our designs and production to match your specific requirements.",
+        "Your satisfaction is our utmost priority. With a dedicated customer-centric approach, we tailor our garments to meet your unique preferences and values, ensuring a seamless and personalized experience with every purchase.",
     },
   ];
 
@@ -34,7 +36,13 @@ const Features = () => {
         <div className="features-grid">
           {items.map((item, index) => (
             <div className="feature-card" key={index}>
-              <div className="feature-icon">{item.icon}</div>
+              <div className="feature-image-wrapper">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="feature-img"
+                />
+              </div>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </div>

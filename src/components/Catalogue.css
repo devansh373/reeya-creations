@@ -1,110 +1,276 @@
-.catalogue-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+.catalogue-section {
+  padding: 8rem 0;
+  background: linear-gradient(to bottom, #e4e4e4 0%, #ffffff 100%);
+  border-radius: 100px; /* Fully rounded "card" look */
   margin-bottom: 4rem;
 }
 
-.header-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.catalogue-header {
+  text-align: center;
+  margin-bottom: 5rem;
 }
 
-.header-text p {
-  color: var(--text-secondary);
+.catalogue-header h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #000;
 }
 
-.catalogue-controls {
-  display: flex;
-  gap: 1rem;
+.catalogue-header p {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.control-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  display: flex;
+.catalogue-header strong {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.catalogue-main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 4rem;
+  margin-bottom: 6rem;
   align-items: center;
-  justify-content: center;
+}
+
+/* Sidebar */
+.catalogue-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: left;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   transition: all 0.2s;
 }
 
-.control-btn:hover {
-  background: black;
-  color: white;
-  border-color: black;
+.nav-item.active {
+  border: 1.5px solid #000;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  background: white;
 }
 
-.catalogue-grid {
+/* Gallery Slider */
+.catalogue-gallery-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.catalogue-gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 40px;
+  padding: 2.5rem 1.5rem 0; /* Title at top, image at bottom */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  /* overflow: hidden; */
+  position: relative;
+}
+
+.product-card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  max-width: 150px;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #000;
+  position: relative;
+  z-index: 2;
+}
+
+.product-img-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: flex-end; /* Image sits at the bottom */
+  justify-content: center;
+  width: 100%;
+}
+
+.product-img-wrapper img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  /* object-position: bottom; */
+  position: absolute;
+  bottom: -10%;
+  left: 10px;
+  /* right: 0; */
+}
+
+.slider-btn {
+  width: 60px;
+  height: 60px;
+  background: black;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slider-btn.prev {
+  left: -30px;
+}
+
+.slider-btn.next {
+  right: -30px;
+}
+
+/* Sector Banner (Black part) */
+.sector-banner {
+  background: #000;
+  border-radius: 80px;
+  padding: 8rem 4rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5rem;
+  box-shadow: 0 120px 0px 1px #e4e4e4;
+  z-index: 10;
+}
+
+.banner-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle at 20% 50%,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 50%
+  );
+  opacity: 0.5;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.banner-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.banner-header p {
+  font-size: 1.1rem;
+  opacity: 0.7;
+}
+
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
 }
 
-.catalogue-card {
-  cursor: pointer;
-}
-
-.card-image {
-  position: relative;
-  aspect-ratio: 4/5;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  margin-bottom: 1.25rem;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.catalogue-card:hover .card-image img {
-  transform: scale(1.05);
-}
-
-.card-overlay {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-.product-count {
-  background: white;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
+.sector-column h4 {
+  font-size: 1.1rem;
   font-weight: 700;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
 }
 
-.card-info h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+.sector-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.view-link {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--text-secondary);
+.sector-column ul li {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.sector-column ul li:hover {
+  opacity: 1;
+}
+
+.sector-column ul li.highlight {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  width: fit-content;
+  opacity: 1;
+}
+
+/* Catalogue Footer */
+.catalogue-footer {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  z-index: 30;
+  /* padding-bottom: 2rem; */
+}
+
+.catalogue-footer a {
+  font-weight: 800;
   text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.catalogue-card:hover .view-link {
-  color: black;
+  color: #000;
 }
 
 @media (max-width: 1200px) {
-  .catalogue-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .catalogue-main {
+    grid-template-columns: 1fr;
+  }
+  .sector-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 600px) {
-  .catalogue-grid {
+@media (max-width: 768px) {
+  .catalogue-gallery {
     grid-template-columns: 1fr;
+  }
+  .sector-grid {
+    grid-template-columns: 1fr;
+  }
+  .sector-banner {
+    padding: 4rem 2rem;
+    border-radius: 50px;
   }
 }

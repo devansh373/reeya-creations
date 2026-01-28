@@ -5,7 +5,8 @@
   display: flex;
   align-items: center;
   padding: 0;
-  overflow: hidden;
+  /* Removed overflow: hidden to allow badges to overlap next section */
+  z-index: 10;
 }
 
 .hero-background {
@@ -45,12 +46,14 @@
 }
 
 .hero-text {
+  padding-top: 190px;
+  margin-left: -30px;
   max-width: 700px;
 }
 
 .hero-text h1 {
   font-size: clamp(2.5rem, 4vw, 4.5rem);
-  line-height: 1.1;
+  line-height: 1;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
 }
@@ -59,13 +62,14 @@
   max-width: 600px;
   font-size: 1.25rem;
   opacity: 0.9;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   line-height: 1.6;
   font-weight: 300;
 }
 
 .hero-text p strong {
   font-weight: 600;
+  font-style: italic;
 }
 
 .hero-actions {
@@ -107,7 +111,7 @@
   left: 0;
   width: 100%;
   transform: translateY(50%);
-  z-index: 20;
+  z-index: 50; /* Ensure it stays above everything else */
 }
 
 .badges-container {
